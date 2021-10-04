@@ -1,0 +1,131 @@
+Shell Commands
+----------------------------------------
+<command> --help           : Shows all Commands
+Change Directory           : cd <directory>
+Present Working Directory  : pwd
+List Items                 : ls
+Copy File                  : cp <file> <destination>
+Move File                  : mv <file> <destination>
+Remove File                : rm <file>
+Print Content              : echo "<text>"
+Shows Content              : cat <filename>
+Shows Content on New       : less <filename>
+Search                     : <filename> | grep <searchterm>
+Make directory             : mkdir <Foldername>
+Create a File              : touch 1.txt 2.txt 3.txt
+change Permissions         : chmod +x/r/w <filename>
+[0= nothing, 1= execute
+2= write, 3= 2+1 = w+x
+4= read, 5= 4+1 = r+x
+6= 4+2 = r+w,
+7= 4+2+1 = r+w+x]          : chmod 777 <filename>
+man + help                 : help commands
+
+
+Shell Basics
+-------------------------------------------------
+#!/bin/sh                //Sh-Bang declaration
+
+Shell Variables
+-------------------------------------------------
+#variable_name=variable_value
+
+NAME="Sathish"           //Assigning Variable
+echo $NAME               //Accessing Variable
+
+Shell Operators
+---------------------------------------------------
+Addition                    : $a + $b
+Substraction                : $a - $b
+Multiplication              : $a * $b
+Division                    : $a / $b
+Modulus                     : $a % $b
+Assignment                  : a =$b
+Compare                     : $a==$b
+          Relational Operators
+Not equal                   : $a!=$b
+equal to                    : $a -eq $b
+Not equal to                : $a -ne $b
+greater than                : $a -gt $b
+less than                   : $a -lt $b
+greater than equal to       : $a -ge $b
+less than or equal to       : $a -le $b
+          Boolean Operators
+Negation                    : !false or !true
+logical OR                  : [$a -lt 20 -o $b -gt 100]
+logical AND                 : [$a -lt 20 -a $b -gt 100]
+          String Operators
+Equal Strings               : $a=$b
+Not Equal Strings           : $a!=$b
+If String Size is Zero      : -z$a
+If string Size is Non Zero  : -n$a
+If String is not empty      : $a
+          File Test Operators
+If file is Block Special    : -b $file
+If file is Character Special: -c $file
+If file is directory        : -d $file
+If file is Ordinary         : -f $file
+If file has Group ID        : -g $file
+If file has Sticky bitset   : -k $file
+If file is named pipe       : -p $file
+If file is terminal Assoc   : -t $file
+If file has Set User ID     : -u $file
+If file is readable         : -r $file
+If file is writable         : -w $file
+If file is execuatble       : -x $file
+If file size is >0          : -s $file
+If file is exists           : -e $file
+
+Shell Loops
+----------------------------------------------------
+
+#for loop                   : Prints Numbers
+for var in 0 1 2 3 4 5 6 7 8 9
+do
+    echo $var
+done
+
+#while loop                 : Prints Numbers
+a=0
+while [ $a -lt 10 ]
+do
+    echo $a
+    a=`expr $a + 1`
+done
+
+#until loop                  : Prints Numbers
+a=0
+while [ ! $a -lt 10 ]
+do
+    echo $a
+    a=`expr $a + 1`
+done
+
+Shell If Condition
+----------------------------------------------------
+a=0
+if [ $a -eq 5 ]
+then
+    echo "$a is equal to 5"
+fi
+    echo "$a is not equal to 5"
+
+Shell Functions
+----------------------------------------------------
+function  name() {
+    ------------
+}
+Example 1:
+Hello(){                  //Define Function
+    echo "Hello Learner"
+}
+
+Hello                     //Invoke Function
+
+Example 2:
+Hello(){                  //Define Function
+    echo "Hello $1 $2"
+}
+
+Hello Priyanka Chopra    //Invoke Function
+
