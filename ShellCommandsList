@@ -1,9 +1,21 @@
+List of Valid Shells       : cat /etc/shells
+Know the Shell path        : which <shellname>
+Execute File               : ./<filename>
+Redirect file              : text > <filename>
+Replace text               : cat > <filename>
+Append text                : cat >> <filename>
+Read Text                  : file < <filename>
+Comment Line               : #
+Multiline Comment          : : '___________'
+
+
 Shell Commands
 ----------------------------------------
 <command> --help           : Shows all Commands
 Change Directory           : cd <directory>
 Present Working Directory  : pwd
 List Items                 : ls
+List Items With More Info  : ls -al
 Copy File                  : cp <file> <destination>
 Move File                  : mv <file> <destination>
 Remove File                : rm <file>
@@ -33,6 +45,7 @@ Shell Variables
 NAME="Sathish"           //Assigning Variable
 echo $NAME               //Accessing Variable
 
+---------------------------------------------------
 Shell Operators
 ---------------------------------------------------
 Addition                    : $a + $b
@@ -76,11 +89,23 @@ If file is execuatble       : -x $file
 If file size is >0          : -s $file
 If file is exists           : -e $file
 
+---------------------------------------------------
+Shell Args.....
+___________________________________________________
+$@                          : echo all args
+$0                          : filename
+$1......$10                 : print array elements
+$#                          : print length of array
+$?                          : exit status of the last command
+
+----------------------------------------------------
 Shell Loops
 ----------------------------------------------------
 
 #for loop                   : Prints Numbers
 for var in 0 1 2 3 4 5 6 7 8 9
+for var in {0..20..2} {start..ending..increment}
+for (( i=0, i<=10; i++ ))
 do
     echo $var
 done
@@ -101,15 +126,32 @@ do
     a=`expr $a + 1`
 done
 
+--------------------------------------------------------
 Shell If Condition
-----------------------------------------------------
+--------------------------------------------------------
 a=0
-if [ $a -eq 5 ]
+if [ $a -eq 5 ]   //Can also use (( $a < 5 ))
 then
-    echo "$a is equal to 5"
+    echo "Condition is true"
+elif (( $a <= 5 ))
+then
+    echo "Second Condition is true"
+else
+    echo "Condition is not true"
 fi
-    echo "$a is not equal to 5"
 
+age=10
+if [ "$age" -gt 18 ] && [ "$age" -lt 40 ]
+if [[ "$age" -gt 18 && "$age" -lt 40 ]]
+if [[ "$age" -gt 18 -a "$age" -lt 40 ]]
+if [[ "$age" -gt 18 -o "$age" -lt 40 ]]
+then
+    echo "Age is Correct"
+else
+    echo "Age is Not Correct"
+fi
+
+----------------------------------------------------
 Shell Functions
 ----------------------------------------------------
 function  name() {
@@ -128,4 +170,61 @@ Hello(){                  //Define Function
 }
 
 Hello Priyanka Chopra    //Invoke Function
+
+Example 3:
+Hello(){                  //Define Function
+    returningValue="Using Function Right Now"
+    echo "$returningValue"
+}
+
+Hello                    //Invoke Function
+
+------------------------------------------------------------
+Shell Arrays
+------------------------------------------------------------
+car = ('Audi' 'BMW' 'Toyota')
+echo "${car[@]}"
+echo "${car[1]}"
+echo "${!car[@}"              //Prints indexes
+echo "${#car[@}"              //Count of Index
+
+------------------------------------------------------------
+Send Email Via Script
+------------------------------------------------------------
+1: sudo apt install ssmtp
+2: gedit /etc/ssmtp/ssmtp.conf
+    root=gmailaddress
+    mailhub=smtp.gmail.com:587
+    AuthUser=gmailaddress
+    AuthPass=
+    UseSTARTTLS=yes
+3: Edit Script
+    ssmtp gmailaddress
+4. Run script
+    To: gmailaddress
+    From: gmailaddress
+    Cc: gmailaddress
+    Subject: Test
+    This is Body
+5: Execute
+
+-----------------------------------------------------
+Curl in Scripts
+-----------------------------------------------------
+url =""
+curl ${url} > outputfile.txt
+
+----------------------------------------------------
+Grep
+----------------------------------------------------
+grep -i -c -n -v <searchtext> <filename>
+
+-i = ignore case sensitive
+-c = prints count of word
+-v = prints lines number which didn't contain word
+
+
+
+
+
 
