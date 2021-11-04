@@ -1,1 +1,30 @@
 About Message Queues: Session 11
+About Shell Scripting: Session 13
+About Normal AMI Creaion: Session 3
+
+About Prometheus (Monitoring)     : Session 34
+About Grafana (Dashboards)        : Session 34
+Create Prometheus Custom Records  : Session 35
+Create Alert rules                : Session 35
+Amazon Email Service for Alerts   : Session 35
+Auto Service discover Nodes       : Session 36
+Monitor Desired Nodes             : Session 36
+
+
+
+Session 43 & 44 : SonarQube ( For Checking Bugs)
+Session 47,48,49 : Creating VPC using Normal Approch and Terraform
+
+About Mutable                     : Session 59
+About Creating Image              : Session 59
+About Auto Scaling Group          : Session 59
+About Creating AMI                : Session 59
+Azure Devops Intro                : Session 59
+Complete Azure                    : Session 60
+
+About Immutable                   : Session 61
+About Containerzed                : Session 67
+
+
+Find Systemd File:
+ cat /etc/systemd/system/<filename.service>
