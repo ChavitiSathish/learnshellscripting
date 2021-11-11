@@ -15,7 +15,7 @@ Monitor Desired Nodes             : Session 36
 Session 43 & 44 : SonarQube ( For Checking Bugs)
 Session 47,48,49 : Creating VPC using Normal Approch and Terraform
 
-About Mutable                     : Session 59
+About iMMutable                   : Session 59
 About Creating Image              : Session 59
 About Auto Scaling Group          : Session 59
 About Creating AMI                : Session 59
